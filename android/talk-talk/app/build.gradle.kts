@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.google.dagger.hilt.android)
 }
 
 android {
@@ -15,7 +17,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.grabieckacper.talktalk.TalkTalkTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -63,4 +65,16 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.hilt.navigation.compose)
+    // Hilt
+    implementation(libs.google.dagger.hilt.android)
+    kapt(libs.google.dagger.hilt.compiler)
+    androidTestImplementation(libs.google.dagger.hilt.android.testing)
+    kaptAndroidTest(libs.google.dagger.hilt.compiler)
+    testImplementation(libs.google.dagger.hilt.android.testing)
+    kaptTest(libs.google.dagger.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }
