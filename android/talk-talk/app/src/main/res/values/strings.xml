@@ -3,9 +3,13 @@
     <!-- Labels -->
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
+    <string name="first_name_label">First name</string>
+    <string name="last_name_label">Last name</string>
     <!-- Placeholders -->
     <string name="email_placeholder">example@email.com</string>
     <string name="password_placeholder">password</string>
+    <string name="first_name_placeholder">Joe</string>
+    <string name="last_name_placeholder">Doe</string>
     <!-- Content descriptions -->
     <string name="email_icon_content_description">Email</string>
     <string name="clear_icon_content_description">Clear</string>
@@ -15,6 +19,7 @@
     <string name="android_dark_rd_na_drawable_content_description">Sign in with Google</string>
     <string name="android_light_rd_na_drawable_content_description">Sign in with Google</string>
     <string name="android_neutral_rd_na_drawable_content_description">Sign in with Google</string>
+    <string name="person_icon_content_description">Person</string>
     <!-- Buttons -->
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
@@ -24,4 +29,5 @@
     <string name="no_account_text">Don\'t have an account?</string>
     <string name="invalid_email_text">Invalid email</string>
     <string name="invalid_password_text">Password must contains at least 8 characters</string>
+    <string name="already_have_an_account_text">Already have an account?</string>
 </resources>
