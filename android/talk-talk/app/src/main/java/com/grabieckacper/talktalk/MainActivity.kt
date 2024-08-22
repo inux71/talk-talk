@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.grabieckacper.talktalk.ui.theme.TalkTalkTheme
-import com.grabieckacper.talktalk.ui.view.RegisterView
+import com.grabieckacper.talktalk.ui.view.TalkListView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             TalkTalkTheme {
-                RegisterView()
+                TalkListView()
             }
         }
     }

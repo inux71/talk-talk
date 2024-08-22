@@ -10,6 +10,7 @@
     <string name="password_placeholder">password</string>
     <string name="first_name_placeholder">Joe</string>
     <string name="last_name_placeholder">Doe</string>
+    <string name="searchbar_placeholder">Search</string>
     <!-- Content descriptions -->
     <string name="email_icon_content_description">Email</string>
     <string name="clear_icon_content_description">Clear</string>
@@ -20,6 +21,15 @@
     <string name="android_light_rd_na_drawable_content_description">Sign in with Google</string>
     <string name="android_neutral_rd_na_drawable_content_description">Sign in with Google</string>
     <string name="person_icon_content_description">Person</string>
+    <string name="account_circle_icon_content_description">Account circle</string>
+    <string name="settings_icon_content_description">Settings</string>
+    <string name="add_icon_content_description">Add</string>
+    <string name="arrow_back_icon_content_description">Arrow back</string>
+    <string name="search_icon_content_description">Search</string>
+    <string name="done_icon_content_description">Done</string>
+    <string name="talk_picture_content_description">Talk picture</string>
+    <string name="notifications_off_drawable_content_description">Notifications off</string>
+    <string name="block_drawable_content_description">Block</string>
     <!-- Buttons -->
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
@@ -30,4 +40,9 @@
     <string name="invalid_email_text">Invalid email</string>
     <string name="invalid_password_text">Password must contains at least 8 characters</string>
     <string name="already_have_an_account_text">Already have an account?</string>
+    <string name="talk_list_view_title_text">Talks</string>
+    <!-- Talk types -->
+    <string name="talk_type_all">All</string>
+    <string name="talk_type_unread">Unread</string>
+    <string name="talk_type_group">Groups</string>
 </resources>

@@ -73,6 +73,8 @@ dependencies {
     kaptAndroidTest(libs.google.dagger.hilt.compiler)
     testImplementation(libs.google.dagger.hilt.android.testing)
     kaptTest(libs.google.dagger.hilt.compiler)
+    // Coil
+    implementation(libs.coil.compose)
 }
 
 kapt {
