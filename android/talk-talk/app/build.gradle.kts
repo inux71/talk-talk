@@ -75,6 +75,8 @@ dependencies {
     kaptTest(libs.google.dagger.hilt.compiler)
     // Coil
     implementation(libs.coil.compose)
+    // Datastore
+    implementation(libs.androidx.datastore.preferences)
 }
 
 kapt {

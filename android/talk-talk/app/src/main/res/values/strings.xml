@@ -40,9 +40,15 @@
     <string name="invalid_email_text">Invalid email</string>
     <string name="invalid_password_text">Password must contains at least 8 characters</string>
     <string name="already_have_an_account_text">Already have an account?</string>
+    <!-- Titles -->
     <string name="talk_list_view_title_text">Talks</string>
+    <string name="settings_view_title_text">Settings</string>
     <!-- Talk types -->
     <string name="talk_type_all">All</string>
     <string name="talk_type_unread">Unread</string>
     <string name="talk_type_group">Groups</string>
+    <!-- Settings options -->
+    <string name="dark_theme_settings_option">Dark theme</string>
+    <string name="dynamic_color_settings_option">Dynamic color</string>
+    <string name="clear_data_settings_option">Clear data</string>
 </resources>
