@@ -30,6 +30,7 @@
     <string name="talk_picture_content_description">Talk picture</string>
     <string name="notifications_off_drawable_content_description">Notifications off</string>
     <string name="block_drawable_content_description">Block</string>
+    <string name="groups_drawable_content_description">Groups</string>
     <!-- Buttons -->
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
@@ -43,6 +44,7 @@
     <!-- Titles -->
     <string name="talk_list_view_title_text">Talks</string>
     <string name="settings_view_title_text">Settings</string>
+    <string name="new_talk_view_title_text">New talk</string>
     <!-- Talk types -->
     <string name="talk_type_all">All</string>
     <string name="talk_type_unread">Unread</string>
