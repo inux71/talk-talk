@@ -35,6 +35,7 @@
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
     <string name="sign_in_with_google_button_text">Sign in with Google</string>
+    <string name="create_group_talk_button_text">Create group</string>
     <!-- Texts -->
     <string name="or_divider_text">or</string>
     <string name="no_account_text">Don\'t have an account?</string>
@@ -45,6 +46,7 @@
     <string name="talk_list_view_title_text">Talks</string>
     <string name="settings_view_title_text">Settings</string>
     <string name="new_talk_view_title_text">New talk</string>
+    <string name="new_group_talk_view_title_text">New group talk</string>
     <!-- Talk types -->
     <string name="talk_type_all">All</string>
     <string name="talk_type_unread">Unread</string>
