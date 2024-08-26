@@ -11,6 +11,7 @@
     <string name="first_name_placeholder">Joe</string>
     <string name="last_name_placeholder">Doe</string>
     <string name="searchbar_placeholder">Search</string>
+    <string name="message_placeholder">Message</string>
     <!-- Content descriptions -->
     <string name="email_icon_content_description">Email</string>
     <string name="clear_icon_content_description">Clear</string>
@@ -31,6 +32,15 @@
     <string name="notifications_off_drawable_content_description">Notifications off</string>
     <string name="block_drawable_content_description">Block</string>
     <string name="groups_drawable_content_description">Groups</string>
+    <string name="call_icon_content_description">Call</string>
+    <string name="videocam_drawable_content_description">Videocam</string>
+    <string name="more_vert_icon_content_description">More vert</string>
+    <string name="mic_drawable_content_description">Mic</string>
+    <string name="send_icon_content_description">Send</string>
+    <string name="image_drawable_content_description">Image</string>
+    <string name="photo_camera_drawable_content_description">Photo camera</string>
+    <string name="attach_file_drawable_content_description">Attach file</string>
+    <string name="location_on_icon_content_description">Location on</string>
     <!-- Buttons -->
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
@@ -42,6 +52,10 @@
     <string name="invalid_email_text">Invalid email</string>
     <string name="invalid_password_text">Password must contains at least 8 characters</string>
     <string name="already_have_an_account_text">Already have an account?</string>
+    <string name="mute_text">Mute</string>
+    <string name="block_text">Block</string>
+    <string name="attachment_text">Attachment</string>
+    <string name="location_text">Location</string>
     <!-- Titles -->
     <string name="talk_list_view_title_text">Talks</string>
     <string name="settings_view_title_text">Settings</string>
