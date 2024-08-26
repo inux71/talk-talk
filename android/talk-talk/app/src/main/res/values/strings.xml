@@ -41,11 +41,14 @@
     <string name="photo_camera_drawable_content_description">Photo camera</string>
     <string name="attach_file_drawable_content_description">Attach file</string>
     <string name="location_on_icon_content_description">Location on</string>
+    <string name="profile_picture_content_description">Profile picture</string>
+    <string name="exit_to_app_icon_content_description">Sign ou</string>
     <!-- Buttons -->
     <string name="sign_in_button_text">Sign in</string>
     <string name="sign_up_button_text">Sign up</string>
     <string name="sign_in_with_google_button_text">Sign in with Google</string>
     <string name="create_group_talk_button_text">Create group</string>
+    <string name="change_profile_picture_button_text">Change</string>
     <!-- Texts -->
     <string name="or_divider_text">or</string>
     <string name="no_account_text">Don\'t have an account?</string>
@@ -69,4 +72,6 @@
     <string name="dark_theme_settings_option">Dark theme</string>
     <string name="dynamic_color_settings_option">Dynamic color</string>
     <string name="clear_data_settings_option">Clear data</string>
+    <string name="sign_out_settings_option">Sign out</string>
+    <string name="change_password_settings_option">Change password</string>
 </resources>
