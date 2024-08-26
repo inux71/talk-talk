@@ -34,7 +34,9 @@ import com.grabieckacper.talktalk.viewmodel.NewGroupTalkViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewGroupTalkView(
-    viewModel: NewGroupTalkViewModel = hiltViewModel()
+    viewModel: NewGroupTalkViewModel = hiltViewModel(),
+    onNavigateBackToTalkListView: () -> Unit,
+    onNavigateToTalkView: (Long) -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -44,7 +46,9 @@ fun NewGroupTalkView(
                     Text(text = stringResource(id = R.string.new_group_talk_view_title_text))
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateBackToTalkListView()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(
@@ -68,7 +72,9 @@ fun NewGroupTalkView(
                         )
                     )
                 },
-                onClick = { /*TODO*/ })
+                onClick = {
+                    onNavigateToTalkView(1L)
+                })
         }
     ) { paddingValues: PaddingValues ->
         Column(
@@ -163,6 +169,9 @@ fun NewGroupTalkView(
 @Preview(showBackground = true)
 fun NewGroupTalkViewPreview() {
     TalkTalkTheme {
-        NewGroupTalkView()
+        NewGroupTalkView(
+            onNavigateBackToTalkListView = {},
+            onNavigateToTalkView = { _ -> }
+        )
     }
 }

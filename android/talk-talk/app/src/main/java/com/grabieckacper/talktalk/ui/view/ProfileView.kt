@@ -46,7 +46,9 @@ import com.grabieckacper.talktalk.viewmodel.ProfileViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileView(
-    viewModel: ProfileViewModel = hiltViewModel()
+    viewModel: ProfileViewModel = hiltViewModel(),
+    onNavigateBackToTalkListView: () -> Unit,
+    onNavigateToLoginView: () -> Unit
 ) {
     val focusManager: FocusManager = LocalFocusManager.current
 
@@ -58,7 +60,9 @@ fun ProfileView(
                     Text(text = "Kacper Grabiec")
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateBackToTalkListView()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(
@@ -151,7 +155,9 @@ fun ProfileView(
 
             SettingsOption(
                 name = stringResource(id = R.string.sign_out_settings_option),
-                modifier = Modifier.clickable(onClick = { /*TODO*/ })
+                modifier = Modifier.clickable(onClick = {
+                    onNavigateToLoginView()
+                })
             ) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Default.ExitToApp,
@@ -168,6 +174,9 @@ fun ProfileView(
 @Preview(showBackground = true)
 fun ProfileViewPreview() {
     TalkTalkTheme {
-        ProfileView()
+        ProfileView(
+            onNavigateBackToTalkListView = {},
+            onNavigateToLoginView = {}
+        )
     }
 }

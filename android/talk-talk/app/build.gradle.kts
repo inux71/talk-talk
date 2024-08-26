@@ -77,6 +77,9 @@ dependencies {
     implementation(libs.coil.compose)
     // Datastore
     implementation(libs.androidx.datastore.preferences)
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    androidTestImplementation(libs.androidx.navigation.testing)
 }
 
 kapt {

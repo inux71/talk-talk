@@ -43,7 +43,8 @@ import java.util.Date
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TalkView(
-    viewModel: TalkViewModel = hiltViewModel()
+    viewModel: TalkViewModel = hiltViewModel(),
+    onNavigateBackToTalkListView: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -57,7 +58,9 @@ fun TalkView(
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateBackToTalkListView()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(
@@ -288,6 +291,6 @@ fun TalkView(
 @Preview(showBackground = true)
 fun TalkViewPreview() {
     TalkTalkTheme {
-        TalkView()
+        TalkView(onNavigateBackToTalkListView = {})
     }
 }

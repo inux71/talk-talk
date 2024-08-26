@@ -6,8 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.grabieckacper.talktalk.ui.theme.TalkTalkTheme
-import com.grabieckacper.talktalk.ui.view.ProfileView
 import com.grabieckacper.talktalk.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,13 +22,22 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
+            val navHostController: NavHostController = rememberNavController()
+
             _viewModel.setTheme(defaultValue = isSystemInDarkTheme())
 
             TalkTalkTheme(
                 darkTheme = _viewModel.state.value.darkTheme,
                 dynamicColor = _viewModel.state.value.dynamicColor
             ) {
-                ProfileView()
+                NavigationController(
+                    navHostController = navHostController,
+                    startDestination = if (_viewModel.state.value.accessToken.isNotEmpty()) {
+                        Route.TALKS
+                    } else {
+                        Route.AUTH
+                    }
+                )
             }
         }
     }

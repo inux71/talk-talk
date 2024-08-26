@@ -3,17 +3,21 @@ package com.grabieckacper.talktalk.viewmodel
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.grabieckacper.talktalk.Route
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TalkViewModel @Inject constructor() : ViewModel() {
+class TalkViewModel @Inject constructor(savedStateHandle: SavedStateHandle) : ViewModel() {
     data class TalkViewModelState(
         val talkDropDownMenuExpanded: Boolean = false,
         val messageDropDownMenuExpanded: Boolean = false,
         val message: String = ""
     )
+
+    private val _talkId: Long = checkNotNull(savedStateHandle[Route.TALK_ID_ARGUMENT])
 
     private val _state: MutableState<TalkViewModelState> = mutableStateOf(TalkViewModelState())
     val state: State<TalkViewModelState>

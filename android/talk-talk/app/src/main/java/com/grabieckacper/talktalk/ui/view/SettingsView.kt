@@ -29,7 +29,9 @@ import com.grabieckacper.talktalk.viewmodel.SettingsViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsView(
-    viewModel: SettingsViewModel = hiltViewModel()
+    viewModel: SettingsViewModel = hiltViewModel(),
+    onNavigateBackToTalkListView: () -> Unit,
+    onNavigateToLoginView: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -39,7 +41,9 @@ fun SettingsView(
                     Text(text = stringResource(id = R.string.settings_view_title_text))
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateBackToTalkListView()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(
@@ -79,6 +83,7 @@ fun SettingsView(
             SettingsOption(
                 name = stringResource(id = R.string.clear_data_settings_option),
                 modifier = Modifier.clickable(onClick = {
+                    onNavigateToLoginView()
                     viewModel.clearData()
                 })
             )
@@ -90,6 +95,9 @@ fun SettingsView(
 @Preview(showBackground = true)
 fun SettingsViewPreview() {
     TalkTalkTheme {
-        SettingsView()
+        SettingsView(
+            onNavigateBackToTalkListView = {},
+            onNavigateToLoginView = {}
+        )
     }
 }

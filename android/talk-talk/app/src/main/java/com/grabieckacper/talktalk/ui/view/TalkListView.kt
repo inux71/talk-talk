@@ -43,7 +43,11 @@ import java.util.Date
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TalkListView(
-    viewModel: TalkListViewModel = hiltViewModel()
+    viewModel: TalkListViewModel = hiltViewModel(),
+    onNavigateToProfileView: () -> Unit,
+    onNavigateToSettingsView: () -> Unit,
+    onNavigateToTalkView: (Long) -> Unit,
+    onNavigateToNewTalkView: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -53,7 +57,9 @@ fun TalkListView(
                     Text(text = stringResource(id = R.string.talk_list_view_title_text))
                 },
                 actions = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateToProfileView()
+                    }) {
                         Icon(
                             imageVector = Icons.Default.AccountCircle,
                             contentDescription = stringResource(
@@ -62,7 +68,9 @@ fun TalkListView(
                         )
                     }
 
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateToSettingsView()
+                    }) {
                         Icon(
                             imageVector = Icons.Default.Settings,
                             contentDescription = stringResource(
@@ -74,7 +82,9 @@ fun TalkListView(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }) {
+            FloatingActionButton(onClick = {
+                onNavigateToNewTalkView()
+            }) {
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = stringResource(id = R.string.add_icon_content_description)
@@ -202,7 +212,9 @@ fun TalkListView(
                 items(count = 10) { index: Int ->
                     TalkHeader(
                         talkName = "Kacper Grabiec",
-                        onClick = {},
+                        onClick = {
+                            onNavigateToTalkView(1L)
+                        },
                         lastMessageSenderName = "You",
                         lastMessage = "Ok",
                         lastMessageDate = Date(),
@@ -221,6 +233,11 @@ fun TalkListView(
 @Preview(showBackground = true)
 fun TalkListViewPreview() {
     TalkTalkTheme {
-        TalkListView()
+        TalkListView(
+            onNavigateToProfileView = {},
+            onNavigateToSettingsView = {},
+            onNavigateToTalkView = { _ -> },
+            onNavigateToNewTalkView = {}
+        )
     }
 }

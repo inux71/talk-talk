@@ -4,6 +4,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.grabieckacper.talktalk.common.DataStoreConstants
@@ -18,7 +19,8 @@ class MainActivityViewModel @Inject constructor(
 ) : ViewModel() {
     data class MainActivityViewModelState(
         val darkTheme: Boolean = false,
-        val dynamicColor: Boolean = false
+        val dynamicColor: Boolean = false,
+        val accessToken: String = ""
     )
 
     private val _state: MutableState<MainActivityViewModelState> =
@@ -33,6 +35,15 @@ class MainActivityViewModel @Inject constructor(
                 defaultValue = false
             ).collect { dynamicColor: Boolean ->
                 _state.value = _state.value.copy(dynamicColor = dynamicColor)
+            }
+        }
+
+        viewModelScope.launch {
+            _dataStoreRepository.read(
+                key = stringPreferencesKey(DataStoreConstants.ACCESS_TOKEN_KEY),
+                defaultValue = ""
+            ).collect { accessToken: String ->
+                _state.value = _state.value.copy(accessToken = accessToken)
             }
         }
     }

@@ -34,7 +34,10 @@ import com.grabieckacper.talktalk.viewmodel.NewTalkViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewTalkView(
-    viewModel: NewTalkViewModel = hiltViewModel()
+    viewModel: NewTalkViewModel = hiltViewModel(),
+    onNavigateBackToTalkListView: () -> Unit,
+    onNavigateToTalkView: (Long) -> Unit,
+    onNavigateToNewGroupTalkView: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -44,7 +47,9 @@ fun NewTalkView(
                     Text(text = stringResource(id = R.string.new_talk_view_title_text))
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onNavigateBackToTalkListView()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(
@@ -56,7 +61,9 @@ fun NewTalkView(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }) {
+            FloatingActionButton(onClick = {
+                onNavigateToNewGroupTalkView()
+            }) {
                 Icon(
                     painter = painterResource(id = R.drawable.baseline_groups_24),
                     contentDescription = stringResource(
@@ -144,7 +151,9 @@ fun NewTalkView(
             ) {
                 items(count = 10) {
                     ProfileLabel(
-                        onClick = { /*TODO*/ },
+                        onClick = {
+                            onNavigateToTalkView(1L)
+                        },
                         profileName = "Kacper Grabiec",
                         profileImageUrl = "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-1/406051853_3340379186261131_8985740721870838088_n.jpg?stp=cp6_dst-jpg_s480x480&_nc_cat=109&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=v97YlMmqj64Q7kNvgFG1f1S&_nc_ht=scontent-waw2-2.xx&oh=00_AYCWlbfSDXKM7rpbk4DPKpD6ncVaWqbxgnetuoShozKJ5w&oe=66CCDFBA"
                     )
@@ -158,6 +167,10 @@ fun NewTalkView(
 @Preview(showBackground = true)
 fun NewTalkViewPreview() {
     TalkTalkTheme {
-        NewTalkView()
+        NewTalkView(
+            onNavigateBackToTalkListView = {},
+            onNavigateToTalkView = { _ -> },
+            onNavigateToNewGroupTalkView = {}
+        )
     }
 }

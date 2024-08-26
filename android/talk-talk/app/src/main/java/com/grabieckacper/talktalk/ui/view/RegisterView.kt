@@ -41,7 +41,9 @@ import com.grabieckacper.talktalk.viewmodel.RegisterViewModel
 
 @Composable
 fun RegisterView(
-    viewModel: RegisterViewModel = hiltViewModel()
+    viewModel: RegisterViewModel = hiltViewModel(),
+    onNavigateBackToLoginView: () -> Unit,
+    onNavigateToTalkListView: () -> Unit
 ) {
     Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues: PaddingValues ->
         Column(
@@ -258,7 +260,9 @@ fun RegisterView(
             )
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    onNavigateBackToLoginView()
+                },
                 modifier = Modifier.fillMaxWidth(0.7f)
             ) {
                 Text(text = stringResource(id = R.string.sign_up_button_text))
@@ -280,7 +284,9 @@ fun RegisterView(
             }
 
             GoogleSignInButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    onNavigateToTalkListView()
+                },
                 modifier = Modifier.fillMaxWidth(0.7f)
             )
 
@@ -291,7 +297,9 @@ fun RegisterView(
             ) {
                 Text(text = stringResource(id = R.string.already_have_an_account_text))
 
-                TextButton(onClick = { /*TODO*/ }) {
+                TextButton(onClick = {
+                    onNavigateBackToLoginView()
+                }) {
                     Text(text = stringResource(id = R.string.sign_in_button_text))
                 }
             }
@@ -303,6 +311,9 @@ fun RegisterView(
 @Preview(showBackground = true)
 fun RegisterViewPreview() {
     TalkTalkTheme {
-        RegisterView()
+        RegisterView(
+            onNavigateBackToLoginView = {},
+            onNavigateToTalkListView = {}
+        )
     }
 }
