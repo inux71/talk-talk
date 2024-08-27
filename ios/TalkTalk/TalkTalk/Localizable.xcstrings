@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "already-have-account" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already have an account?"
+          }
+        }
+      }
+    },
     "app-name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -30,6 +41,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "email"
+          }
+        }
+      }
+    },
+    "firstname" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firstname"
+          }
+        }
+      }
+    },
+    "firstname-prompt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "first name"
+          }
+        }
+      }
+    },
+    "lastname" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lastname"
+          }
+        }
+      }
+    },
+    "lastname-prompt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "last name"
           }
         }
       }
