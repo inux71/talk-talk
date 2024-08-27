@@ -11,7 +11,9 @@ import SwiftUI
 struct TalkTalkApp: App {
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            NavigationStack {
+                TabsView()
+            }
         }
     }
 }

@@ -122,6 +122,45 @@
         }
       }
     },
+    "Profile view" : {
+
+    },
+    "profile-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        }
+      }
+    },
+    "search-prompt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "search"
+          }
+        }
+      }
+    },
+    "Settings view" : {
+
+    },
+    "settings-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
     "sign-in" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -140,6 +179,20 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign up"
+          }
+        }
+      }
+    },
+    "Talk list view" : {
+
+    },
+    "talk-list-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talks"
           }
         }
       }
