@@ -11,7 +11,49 @@ struct ProfileView: View {
     @StateObject private var _viewModel: ProfileViewModel = ProfileViewModel()
     
     var body: some View {
-        Text("Profile view")
+        VStack {
+            AsyncImage(url: URL(string: _viewModel.profileImageUrl)) { phase in
+                if let image = phase.image {
+                    image
+                } else if phase.error != nil {
+                    Color.gray
+                } else {
+                    ProgressView()
+                }
+            }.frame(
+                width: 128,
+                height: 128
+            )
+            .clipShape(Circle())
+            
+            Button(
+                "Change", 
+                action: {}
+            )
+            
+            List {
+                Section {
+                    Text(_viewModel.email)
+                    
+                    SecureField(
+                        text: $_viewModel.password,
+                        prompt: Text("Password")
+                    ) {
+                        Text("Password")
+                    }
+                }
+                
+                Section {
+                    Button(
+                        role: .destructive,
+                        action: {}
+                    ) {
+                        Text("Sign out")
+                    }
+                }
+            }
+        }.navigationTitle("Kacper Grabiec")
+            .background(.background.secondary)
     }
 }
 
