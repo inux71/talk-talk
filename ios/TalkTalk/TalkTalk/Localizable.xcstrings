@@ -23,6 +23,31 @@
         }
       }
     },
+    "Apperance" : {
+
+    },
+    "clear-data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear data"
+          }
+        }
+      }
+    },
+    "dark-theme" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark theme"
+          }
+        }
+      }
+    },
     "email" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -89,6 +114,9 @@
         }
       }
     },
+    "Local data" : {
+
+    },
     "no-account" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -136,6 +164,17 @@
         }
       }
     },
+    "profile-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        }
+      }
+    },
     "search-prompt" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -147,10 +186,18 @@
         }
       }
     },
-    "Settings view" : {
-
-    },
     "settings-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "settings-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -187,6 +234,17 @@
 
     },
     "talk-list-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talks"
+          }
+        }
+      }
+    },
+    "talk-list-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

@@ -8,5 +8,22 @@
 import Foundation
 
 class SettingsViewModel : ObservableObject {
+    private var _userDefaultsRepository: UserDefaultsRepository = UserDefaultsRepository()
     
+    @Published var isDarkTheme: Bool
+    
+    init () {
+        isDarkTheme = _userDefaultsRepository.getBool(forKey: UserDefaultsKeys.DARK_THEME)
+    }
+    
+    func saveTheme() -> Void {
+        _userDefaultsRepository.save(
+            isDarkTheme,
+            forKey: UserDefaultsKeys.DARK_THEME
+        )
+    }
+    
+    func clearUserDefaults() {
+        _userDefaultsRepository.clear()
+    }
 }

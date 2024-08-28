@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct TalkTalkApp: App {
+    @AppStorage(UserDefaultsKeys.DARK_THEME) private var _darkTheme: Bool = false
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                TabsView()
+                SettingsView()
+                    .preferredColorScheme(_darkTheme ? .dark : .light)
             }
         }
     }
