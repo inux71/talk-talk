@@ -14,7 +14,7 @@ struct SettingsView: View {
         List {
             Section {
                 Toggle(
-                    "dark-theme",
+                    "Dark theme",
                     isOn: $_viewModel.isDarkTheme
                 ).onChange(of: _viewModel.isDarkTheme) {
                     _viewModel.saveTheme()
@@ -25,7 +25,7 @@ struct SettingsView: View {
             
             Section {
                 Button(
-                    "clear-data",
+                    "Clear data",
                     role: .destructive,
                     action: {
                         _viewModel.clearUserDefaults()
@@ -34,7 +34,7 @@ struct SettingsView: View {
             } header: {
                 Text("Local data")
             }
-        }.navigationTitle("settings-title")
+        }.navigationTitle("Settings")
     }
 }
 

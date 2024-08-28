@@ -16,33 +16,33 @@ struct LoginView: View {
     var body: some View {
         GeometryReader { geometryProxy in
             VStack(alignment: .center) {
-                Text("app-name")
+                Text("Talk Talk")
                 
                 TextField(
-                    "email",
+                    "Email",
                     text: $_viewModel.email,
-                    prompt: Text("email-prompt")
+                    prompt: Text("Email")
                 )
                 .focused($_emailTextFieldFocused)
                 
                 SecureField(
-                    "password",
+                    "Password",
                     text: $_viewModel.password,
-                    prompt: Text("password-prompt")
+                    prompt: Text("Password")
                 )
                 .focused($_passwordTextFieldFocused)
                 
                 Button(action: {}) {
-                    Text("sign-in")
+                    Text("Sign in")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(BorderedProminentButtonStyle())
                 
                 HStack(alignment: .center) {
-                    Text("no-account")
+                    Text("Don't have an account?")
                     
                     Button(
-                        "sign-up",
+                        "Sign up",
                         action: {}
                     )
                 }

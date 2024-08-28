@@ -18,47 +18,47 @@ struct RegisterView: View {
     var body: some View {
         GeometryReader { geometryProxy in
             VStack(alignment: .center) {
-                Text("app-name")
+                Text("Talk Talk")
                 
                 TextField(
-                    "firstname",
+                    "First name",
                     text: $_viewModel.firstname,
-                    prompt: Text("firstname-prompt")
+                    prompt: Text("First name")
                 )
                 .focused($_firstnameTextFieldFocused)
                 
                 TextField(
-                    "lastname",
+                    "Last name",
                     text: $_viewModel.lastname,
-                    prompt: Text("lastname-prompt")
+                    prompt: Text("Last name")
                 )
                 .focused($_lastnameTextFieldFocused)
                 
                 TextField(
-                    "email",
+                    "Email",
                     text: $_viewModel.email,
-                    prompt: Text("email-prompt")
+                    prompt: Text("Email")
                 )
                 .focused($_emailTextFieldFocused)
                 
                 SecureField(
-                    "password",
+                    "Password",
                     text: $_viewModel.password,
-                    prompt: Text("password-prompt")
+                    prompt: Text("Password")
                 )
                 .focused($_passwordTextFieldFocused)
                 
                 Button(action: {}) {
-                    Text("sign-up")
+                    Text("Sign up")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(BorderedProminentButtonStyle())
                 
                 HStack(alignment: .center) {
-                    Text("already-have-account")
+                    Text("Already have an account?")
                     
                     Button(
-                        "sign-in",
+                        "Sign in",
                         action: {}
                     )
                 }
