@@ -14,7 +14,7 @@ struct TalkTalkApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ProfileView()
+                TalkListView()
                     .preferredColorScheme(_darkTheme ? .dark : .light)
             }
         }
