@@ -9,4 +9,5 @@ import Foundation
 
 class TalkListViewModel : ObservableObject {
     @Published var searchQuery: String = ""
+    @Published var selectedTalkType: TalkType = TalkType.all
 }
