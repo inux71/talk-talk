@@ -14,9 +14,9 @@ struct TalkTalkApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                TalkView()
+                NewTalkView()
                     .preferredColorScheme(_darkTheme ? .dark : .light)
-            }
+            }.tint(_darkTheme ? .white : .black)
         }
     }
 }
