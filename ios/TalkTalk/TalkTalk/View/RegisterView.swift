@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var _viewModel: RegisterViewModel = RegisterViewModel()
-    
-    @FocusState private var _firstnameTextFieldFocused: Bool
-    @FocusState private var _lastnameTextFieldFocused: Bool
-    @FocusState private var _emailTextFieldFocused: Bool
-    @FocusState private var _passwordTextFieldFocused: Bool
     
     var body: some View {
         GeometryReader { geometryProxy in
@@ -25,30 +21,28 @@ struct RegisterView: View {
                     text: $_viewModel.firstname,
                     prompt: Text("First name")
                 )
-                .focused($_firstnameTextFieldFocused)
                 
                 TextField(
                     "Last name",
                     text: $_viewModel.lastname,
                     prompt: Text("Last name")
                 )
-                .focused($_lastnameTextFieldFocused)
                 
                 TextField(
                     "Email",
                     text: $_viewModel.email,
                     prompt: Text("Email")
                 )
-                .focused($_emailTextFieldFocused)
                 
                 SecureField(
                     "Password",
                     text: $_viewModel.password,
                     prompt: Text("Password")
                 )
-                .focused($_passwordTextFieldFocused)
                 
-                Button(action: {}) {
+                Button(action: {
+                    dismiss()
+                }) {
                     Text("Sign up")
                         .frame(maxWidth: .infinity)
                 }
@@ -59,7 +53,9 @@ struct RegisterView: View {
                     
                     Button(
                         "Sign in",
-                        action: {}
+                        action: {
+                            dismiss()
+                        }
                     )
                 }
                 .buttonStyle(DefaultButtonStyle())
@@ -76,7 +72,7 @@ struct RegisterView: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 

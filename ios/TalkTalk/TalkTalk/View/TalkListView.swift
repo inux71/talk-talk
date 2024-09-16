@@ -18,17 +18,21 @@ struct TalkListView: View {
                 }
             }.pickerStyle(.segmented)
             
-            ForEach(1...5, id: \.self) {
-                TalkHeader(
-                    talkName: "Kacper Grabiec",
-                    lastMessageSenderName: "You",
-                    lastMessage: "Ok",
-                    lastMessageDate: Date(),
-                    muted: true,
-                    blocked: true,
-                    unread: true,
-                    talkImageUrl: URL(string: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-1/406051853_3340379186261131_8985740721870838088_n.jpg?stp=cp6_dst-jpg_s480x480&_nc_cat=109&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=v97YlMmqj64Q7kNvgFG1f1S&_nc_ht=scontent-waw2-2.xx&oh=00_AYCWlbfSDXKM7rpbk4DPKpD6ncVaWqbxgnetuoShozKJ5w&oe=66CCDFBA")!
-                ).badge($0)
+            ForEach(_viewModel.talks) { talk in
+                NavigationLink {
+                    TalkView(id: talk.id)
+                } label: {
+                    TalkHeader(
+                        talkName: talk.name,
+                        lastMessageSenderName: "You",
+                        lastMessage: "Ok",
+                        lastMessageDate: Date(),
+                        muted: false,
+                        blocked: false,
+                        unread: false,
+                        talkImageUrl: talk.imageURL
+                    )
+                }//.badge($0)
                     .swipeActions {
                         Button(
                             role: .destructive,
@@ -63,25 +67,40 @@ struct TalkListView: View {
                 // To do
             }
         }.navigationTitle("Talks")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarBackButtonHidden()
             .toolbar {
                 ToolbarItemGroup {
-                    Button(
-                        "Profile",
-                        systemImage: "person.crop.circle",
-                        action: {}
-                    )
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        Label(
+                            "Profile",
+                            systemImage: "person.crop.circle"
+                        )
+                    }
                     
-                    Button(
-                        "Settings",
-                        systemImage: "gear",
-                        action: {}
-                    )
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Label(
+                            "Settings",
+                            systemImage: "gear"
+                        )
+                    }
                     
                     Button(
                         "New talk",
                         systemImage: "plus.circle",
-                        action: {}
-                    )
+                        action: {
+                            _viewModel.newTalkSheetPresented.toggle()
+                        }
+                    ).sheet(
+                        isPresented: $_viewModel.newTalkSheetPresented,
+                        onDismiss: {}
+                    ) {
+                        NewTalkSheet()
+                    }
                 }
             }.searchable(
                 text: $_viewModel.searchQuery,
@@ -91,5 +110,7 @@ struct TalkListView: View {
 }
 
 #Preview {
-    TalkListView()
+    NavigationStack {
+        TalkListView()
+    }
 }

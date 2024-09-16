@@ -12,7 +12,9 @@ struct ProfileLabel: View {
     let profileImageURL: URL
     
     var body: some View {
-        HStack {
+        Label {
+            Text(profileName)
+        } icon: {
             AsyncImage(url: profileImageURL) { phase in
                 if let image = phase.image {
                     image
@@ -25,12 +27,7 @@ struct ProfileLabel: View {
                 width: 48,
                 height: 48
             ).clipShape(Circle())
-            
-            Text(profileName)
-        }.frame(
-            maxWidth: .infinity,
-            alignment: .leading
-        )
+        }
     }
 }
 

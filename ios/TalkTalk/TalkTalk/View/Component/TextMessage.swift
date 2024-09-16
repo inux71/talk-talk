@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TextMessage: View {
+    @AppStorage(UserDefaultsKeys.DARK_THEME) private var _darkTheme: Bool = false
+    
     let message: String
     let date: Date
     let reversed: Bool
@@ -20,7 +22,7 @@ struct TextMessage: View {
             
             Text("\(message) \(date.messageDate())")
                 .padding(.all, 5)
-                .foregroundStyle(.white)
+                .foregroundStyle(_darkTheme ? .black : .white)
                 .background(reversed ? .primary : .secondary)
                 .clipShape(Capsule())
             

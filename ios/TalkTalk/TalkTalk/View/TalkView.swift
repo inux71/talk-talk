@@ -10,6 +10,8 @@ import SwiftUI
 struct TalkView: View {
     @StateObject private var _viewModel: TalkViewModel = TalkViewModel()
     
+    let id: Int
+    
     var body: some View {
         ScrollView {
             TextMessage(
@@ -109,5 +111,5 @@ struct TalkView: View {
 }
 
 #Preview {
-    TalkView()
+    TalkView(id: 1)
 }
