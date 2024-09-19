@@ -52,6 +52,8 @@
     <!-- Texts -->
     <string name="or_divider_text">or</string>
     <string name="no_account_text">Don\'t have an account?</string>
+    <string name="invalid_first_name_text">First name can not be empty</string>
+    <string name="invalid_last_name_text">Last name can not be empty</string>
     <string name="invalid_email_text">Invalid email</string>
     <string name="invalid_password_text">Password must contains at least 8 characters</string>
     <string name="already_have_an_account_text">Already have an account?</string>

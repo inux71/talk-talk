@@ -80,6 +80,11 @@ dependencies {
     // Navigation
     implementation(libs.androidx.navigation.compose)
     androidTestImplementation(libs.androidx.navigation.testing)
+    // Ktor
+    implementation(libs.io.ktor.client.core)
+    implementation(libs.io.ktor.client.cio)
+    implementation(libs.io.ktor.client.content.negotiation)
+    implementation(libs.io.ktor.serialization.gson)
 }
 
 kapt {
