@@ -1,6 +1,8 @@
 package com.grabieckacper.talktalk.module
 
+import com.grabieckacper.talktalk.service.AuthenticationService
 import com.grabieckacper.talktalk.service.UserService
+import com.grabieckacper.talktalk.service.implementation.AuthenticationServiceImpl
 import com.grabieckacper.talktalk.service.implementation.UserServiceImpl
 import dagger.Module
 import dagger.Provides
@@ -16,5 +18,11 @@ object ServiceModule {
     @Singleton
     fun provideUserService(httpClient: HttpClient): UserService {
         return UserServiceImpl(httpClient)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAuthenticationService(httpClient: HttpClient): AuthenticationService {
+        return AuthenticationServiceImpl(httpClient)
     }
 }
