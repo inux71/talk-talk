@@ -19,8 +19,6 @@ public class User extends BaseEntity implements UserDetails {
     private String email;
 
     // No validation here in case of create User by OAuth2 providers like Google etc.
-    @NotBlank
-    @Size(min = 8)
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
